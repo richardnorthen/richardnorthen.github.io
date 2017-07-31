@@ -1,0 +1,60 @@
+html {
+	font-family: 'Slabo 27px', serif;
+}
+
+body {
+	max-width: 600px;
+	min-width: 400px;
+	margin: 100px auto 0;
+	padding: 0 20px;
+	box-shadow: 2px 4px 6px 1px rgba(50, 50, 50, 0.14);
+}
+
+a {
+	color: #f88;
+	text-decoration: none;
+}
+ 
+a:hover,
+a:active {
+	text-decoration: underline;
+}
+
+header {
+	text-align: center;
+	border-bottom: 1px solid #ddd;
+}
+
+h1 {
+	font-size: 2em;
+	margin: 0;
+	padding: 10px 0 0;
+}
+
+main {
+	padding-bottom: 10px;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+.data-list {
+	font-size: 1.3em;
+	padding: 10px;
+	margin: 0;
+	white-space: nowrap;
+	vertical-align: top;
+}
+
+.list-item {
+	position: relative;
+	box-sizing: border-box;
+	display: block;
+}
+
+.data-bio {
+	border-left: 1px solid #ddd;
+	padding: 10px;
+	/* vertical-align: top; */
+}
