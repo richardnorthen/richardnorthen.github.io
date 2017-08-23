@@ -72,7 +72,7 @@ section.modalWindow section.modalWrapper {
 	<script>
 modal = {
 	popupBtn: ".modalButton",
-	closeBtn: ".overlay, .closeBtn",
+	closeBtn: ".overlay, .closeBtn, .submitBtn",
 	dataAttr: "data-popup"
 };
 $(document).on("click", modal.popupBtn, function () {
@@ -99,7 +99,7 @@ $(document).on("click", modal.closeBtn, function () {
 		<br />
 		<p>Email <input type="text"></p>
 		<br />
-		<button>Submit</button>
+		<button class="submitBtn">Submit</button>
 	</section>
 	<a class="closeBtn">CLOSE X</a>
 </section>
