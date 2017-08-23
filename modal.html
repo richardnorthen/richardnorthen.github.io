@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+	<head>
+	<meta charset="utf-8" />
+	<style>
+@charset "utf-8";
+html, body {
+	width: 100%;
+	height: 100%;
+}
+html , body , h1 , h2 , h3 , h4 , h5 , p , header, nav, article, section, aside, figure, figcaption, footer {
+	margin:0px;
+	padding:0px;
+}
+header, article, section, aside, figure, figcaption, footer {
+	display:block
+} 
+body {
+	background: #fdf3e7;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;  
+}
+header {
+	background: #3B3738;
+	color: #fdf3e7;
+	padding: 20px;
+	text-align: center;
+}
+
+section.modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 998;
+}
+section.modalWindow {
+	position: fixed;
+	top: 20%;
+	left: 50%;
+	z-index: 999 !important;
+	width: 600px;
+	min-height: 200px;
+	margin-left: -300px;
+	background: #FFF;
+	cursor: default;
+}
+section.modal.overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	min-height: 100%;
+	background: rgba(0, 0, 0, 0.7);
+	z-index: 997;
+	cursor: pointer;
+}
+section.modalWindow section.modalWrapper {
+	margin: 30px;
+	border: 1px solid #DADADA;
+	padding: 15px;
+	text-align: left;
+	line-height: 20px !important;
+	height: 300px;
+}
+.closeBtn {
+	position: absolute;
+	right: 10px;
+	top: 6px;
+	cursor: pointer;
+}
+	</style>
+	<script src="jquery-3.2.1.min.js"></script>
+	<script>
+modal = {
+	popupBtn: ".modalButton",
+	closeBtn: ".overlay, .closeBtn",
+	dataAttr: "data-popup"
+};
+$(document).on("click", modal.popupBtn, function () {
+	if ($(this).attr(modal.dataAttr)) {
+		var strDataPopupName = $(this).attr(modal.dataAttr);
+		$(".overlay, #" + strDataPopupName).fadeIn();
+	}
+});
+$(document).on("click", modal.closeBtn, function () {
+	$(".modal").fadeOut();
+});
+	</script>
+</head>
+
+<header>
+	<h1>Modal Popup</h1>
+</header>
+<a href="#" class="modalButton" data-popup="popupOne">Open Email form</a>
+
+<section class="modal modalWindow" id="popupOne">  
+	<section class="modalWrapper">
+		<h2>Please enter your information</h2>
+		<p>Name <input type="text"></p>
+		<br />
+		<p>Email <input type="text"></p>
+		<br />
+		<button>Submit</button>
+	</section>
+	<a class="closeBtn">CLOSE X</a>
+</section>
+<section class="modal overlay"></section>
